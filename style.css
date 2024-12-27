@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Porpora";
+  src: url(porpora-regular.woff2);
+}
+
+@keyframes startanim {
+  0% { transform: translate(-101%, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+:root {
+  --background: #ffffff;
+  --highlight: #ab2a2c;
+}
+
+body.cream {
+  --background: #d7d7be;
+  --highlight: #000000;
+}
+
+body.dark {
+  --background: #222222;
+  --highlight: #ffffff;
+}
+
+body {
+	font-family: Porpora;
+	font-size: 24px;
+	line-height: 1;
+	
+	background-color: var(--background);
+  background-image: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.25));
+  
+	color: var(--highlight);
+  
+  transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  
+  display: flex;
+  flex-direction: column;
+  
+  overflow: hidden;
+}
+
+h1, div.description, nav a {
+  padding: 8px 12px 8px 12px;
+  text-align: center;
+  
+  background-color: var(--highlight);
+  color: var(--background);
+  
+  border: 2px solid var(--highlight);
+  
+  margin: 0 0 2px 0;
+  
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  flex: 1;
+  margin: 0 2px 0 0;
+  text-decoration: none;
+  
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:last-child {
+  margin: 0;
+}
+
+nav a:hover {
+  background-color: transparent;
+  color: var(--highlight);
+}
+
+section {
+  min-height: 100vh;
+  
+  overflow: hidden;
+}
+
+h1 {
+  animation: startanim 1s 1.5s both;
+}
+
+div.description {
+  animation: startanim 1.25s 1.75s both;
+}
+
+nav {
+  animation: startanim 1.5s 2s both;
+}
+
